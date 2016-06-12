@@ -1,0 +1,28 @@
+1. Exception in thread "main" org.pojoxml.exeception.ClassHandlerException: No getter Method available for field :booleanValue
+java.lang.NoSuchMethodException: org.pojoxml.core.Primitives.getBooleanValue()
+	at org.pojoxml.util.ClassUtil.invokeGetter(ClassUtil.java:159)
+	at org.pojoxml.util.ClassUtil.isCollection(ClassUtil.java:251)
+	at org.pojoxml.core.processor.ClassXmlProcessor.toXml(ClassXmlProcessor.java:194)
+	at org.pojoxml.core.processor.ClassXmlProcessor.toString(ClassXmlProcessor.java:168)
+	at org.pojoxml.core.PojoXmlImpl.getXml(PojoXmlImpl.java:40)
+	at org.pojoxml.test.PrimitivesTest.main(PrimitivesTest.java:19)
+
+	isBoolean issue.
+	
+	Boolean value cant able to process
+
+	FINISHED.
+		
+2. New class name
+	FINISHED
+3. Object array needs to handle.
+	NO.
+4. boolean field getter method issue. isType value;
+	FINISHED.
+5. date and time stamp not handled.
+	NO.
+	
+6. Wrapper array is 
+
+
+7. One extra line is comming while using inner objects.

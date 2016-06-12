@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wrappers>
+  <byteValue>10</byteValue>
+  <shortValue>11</shortValue>
+  <intValue/>
+  <longValue>1234567890</longValue>
+  <charValue>F</charValue>
+  <floatValue>11.23</floatValue>
+  <doubleValue/>
+  <booleanValue>true</booleanValue>
+</Wrappers>

@@ -1,0 +1,6 @@
+org.pojoxml.core
+org.pojoxml.core.processor
+org.pojoxml.core.processor.pojotoxml
+org.pojoxml.core.processor.xmltopojo.dom
+org.pojoxml.exeception
+org.pojoxml.util

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="PojoXML" basedir="." default="pojoXmlJar">
+	<property name="Name" value="PojoXML" />
+	<property name="version.full" value="1.0" />
+	<property name="dir.build" value="./dist" />
+	<property name="dir.test.src" value="./test" />
+	<property name="dir.src" value="./src" />
+	<property name="dir.out.doc" value="./docs/javadoc" />
+	<property name="dir.doc.api" value="${dir.out.doc}/api" />
+	<property name="jarname" value="pojoxml-${version.full}.jar" />
+	<property name="javadoc.url.jse" value="http://java.sun.com/j2se/1.3/docs/api" />
+	<property name="pojoxml.testxml" value="F:\\Study\\WorkSpace\\PojoXML\\PojoXML\\test\\xml\\" />
+	<path id="pojoxml.class.path">
+		<fileset dir="./lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${java.class.path}/" />
+		<pathelement path="${dir.build}/src/" />
+		<pathelement path="${dir.build}/test/" />
+		<pathelement path="${dir.build}/testreport" />
+	</path>
+	<target name="cleanAfterBuild">
+		<delete>
+			<fileset dir="${dir.test.src}/xml" includes="**/*TO.xml" />
+		</delete>
+		<delete dir="${dir.build}/src" />
+		<delete dir="${dir.build}/test" />
+		<delete dir="${dir.build}/testreport" />
+	</target>
+	<target name="clean" description="Deleting the temp files and directories">
+		<delete>
+			<fileset dir="${dir.test.src}/xml" includes="**/*TO.xml" />
+		</delete>
+		<delete dir="${dir.build}/src" />
+		<delete dir="${dir.build}/test" />
+		<delete dir="${dir.build}/testreport" />
+		<delete file="./${jarname}" />
+	</target>
+	<target name="init" depends="clean" description="Intializing the build process">
+		<mkdir dir="${dir.build}/src" />
+		<mkdir dir="${dir.build}/test" />
+		<mkdir dir="${dir.build}/testreport" />
+		<mkdir dir="${dir.build}/testreport/hmtl" />
+		<mkdir dir="${dir.doc.api}" />
+	</target>
+	<target name="test" depends="run-tests">
+		<junitreport todir="${dir.build}/testreport">
+			<fileset dir="${dir.build}/testreport">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${dir.build}/testreport/hmtl" />
+		</junitreport>
+	</target>
+	<target name="run-tests" depends="compile" description="run your test suite">
+		<junit printsummary="yes" haltonfailure="yes" showoutput="yes" fork="true" forkmode="once" haltonerror="false" failureproperty="tests.failures" errorproperty="tests.errors" includeantruntime="true">
+			<jvmarg value="-Dtestxml=${pojoxml.testxml}" /> 
+			<classpath refid="pojoxml.class.path" />
+			<batchtest fork="yes" todir="${dir.build}/testreport" haltonfailure="no">
+				<formatter type="xml" />
+				<fileset dir="${dir.test.src}">
+					<include name="**/*Test*.java" />
+				</fileset>
+				<fileset dir="${dir.build}/test">
+					<include name="org/pojoxml/**/*TestCase*.class" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+	<target name="javadoc" description="Compile the Javadoc API documentation to dist dir">
+		<delete>
+			<fileset dir="${dir.out.doc}" includes="**/*" />
+		</delete>
+		<mkdir dir="${dir.out.doc}/api" />
+		<javadoc classpathref="pojoxml.class.path" destdir="${dir.out.doc}/api" use="true" protected="true" version="true" doctitle="${Name} API Documentation (${version.full})" windowtitle="${Name} API Documentation" stylesheetfile="${dir.doc.api}/jdstyle.css">
+
+			<packageset dir="${dir.src}" defaultexcludes="yes">
+				<include name="org/pojoxml/**" />
+			</packageset>
+		</javadoc>
+	</target>
+	<target name="compile" depends="init" description="Compiling the source and test">
+		<javac source="1.3" srcdir="${dir.src}" destdir="${dir.build}/src">
+		</javac>
+		<javac source="1.3" srcdir="${dir.test.src}" destdir="${dir.build}/test">
+			<classpath refid="pojoxml.class.path">
+			</classpath>
+		</javac>
+	</target>
+	<target name="pojoXmlJar" depends="test,javadoc" description="For Building the jar file">
+		<tstamp />
+		<jar destfile="./${jarname}" basedir="${dir.build}/src" includes="org/pojoxml/**">
+		</jar>
+	</target>
+</project>

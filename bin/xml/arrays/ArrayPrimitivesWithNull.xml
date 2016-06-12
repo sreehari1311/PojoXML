@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PrimitiveArray>
+  <byteValue/>
+  <shortValue>12</shortValue>
+  <shortValue>13</shortValue>
+  <intValue>14</intValue>
+  <intValue>15</intValue>
+  <longValue>1234567890</longValue>
+  <charValue>F</charValue>
+  <charValue>A</charValue>
+  <floatValue/>
+  <doubleValue>1112.68</doubleValue>
+  <booleanValue/>
+</PrimitiveArray>

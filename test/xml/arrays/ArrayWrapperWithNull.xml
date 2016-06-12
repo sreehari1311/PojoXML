@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WrapperArray>
+  <byteValue/>
+  <shortValue>12</shortValue>
+  <shortValue>13</shortValue>
+  <intValue>14</intValue>
+  <intValue>15</intValue>
+  <intValue/>
+  <longValue>1234567890</longValue>
+  <charValue>F</charValue>
+  <charValue>A</charValue>
+  <floatValue>11.2</floatValue>
+  <floatValue>11.3</floatValue>
+  <doubleValue>1112.68</doubleValue>
+  <booleanValue/>
+</WrapperArray>

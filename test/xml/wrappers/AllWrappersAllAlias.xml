@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wrapper>
+  <byte>10</byte>
+  <short>11</short>
+  <int>12</int>
+  <long>1234567890</long>
+  <char>F</char>
+  <float>11.23</float>
+  <double>1112.68</double>
+  <boolean>true</boolean>
+</wrapper>

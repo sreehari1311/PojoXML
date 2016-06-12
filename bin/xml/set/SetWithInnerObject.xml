@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SetTst>
+  <name>xxx</name>
+  <linkedSet>
+    <ListInn>
+      <address>Mumbai</address>
+      <salary>55000.45</salary>
+    </ListInn>
+  </linkedSet>
+  <sss>11</sss>
+</SetTst>

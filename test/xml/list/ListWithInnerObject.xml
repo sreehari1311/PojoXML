@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListInnerObj>
+  <name>xxx</name>
+  <list>
+    <ListInn>
+      <address>Mumbai</address>
+      <salary>55000.45</salary>
+    </ListInn>
+  </list>
+  <sss>11</sss>
+</ListInnerObj>

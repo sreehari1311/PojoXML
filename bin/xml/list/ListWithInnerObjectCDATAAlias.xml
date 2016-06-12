@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListInnerObj>
+  <name><![CDATA[xxx]]></name>
+  <list>
+    <listInput>
+      <address><![CDATA[Mumbai]]></address>
+      <salary>55000.45</salary>
+    </listInput>
+    <listInput>
+      <address><![CDATA[Mumbai]]></address>
+      <salary>55000.45</salary>
+    </listInput>
+  </list>
+  <sss>11</sss>
+</ListInnerObj>
